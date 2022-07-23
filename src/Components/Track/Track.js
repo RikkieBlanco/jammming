@@ -1,6 +1,8 @@
 import React from 'react';
 import './Track.css';
 
+import { PlayButton } from '../PlayButton/PlayButton'
+
 class Track extends React.Component {
     constructor(props) {
         super(props);
@@ -34,6 +36,7 @@ class Track extends React.Component {
                 <div className="Track-information">
                     <h3>{this.props.track.name}</h3>
                     <p>{this.props.track.artist} | {this.props.track.album}</p>
+                    <PlayButton />
                 </div>
                 {this.renderAction()}
             </div>
