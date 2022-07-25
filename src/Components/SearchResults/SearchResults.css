@@ -11,6 +11,10 @@
       width: 0px;
       background: transparent;
   }
+
+  .SearchResults h2 {
+    margin-bottom: 2rem;;
+  }
   
   @media only screen and (max-width: 1020px) {
     .SearchResults {

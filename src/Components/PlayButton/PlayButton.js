@@ -1,8 +1,8 @@
 import React from "react";
 import './PlayButton.css';
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faPlay, faPause} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 
 export class PlayButton extends React.Component {
     constructor(props) {
@@ -13,14 +13,16 @@ export class PlayButton extends React.Component {
     // const play = <FontAwesomeIcon icon={faPlay} />;
     // const pause = <FontAwesomeIcon icon={faPause} />;
     playMusic() {
-        const previewUrl = this.props.audioFile + '.mp3';
-        previewUrl.play();
-    }
+        const player = document.getElementsByClassName('previewPlayer');
+        player.play();
+      }
 
     render() {
         return (
-            <div>
-                <button className="playButton" onClick={this.playMusic} ><FontAwesomeIcon icon={faPlay} /></button>
+            <div className="PlayButton" >
+                <audio controls className='previewPlayer'>
+                    <source src={this.props.audioFile + '.mp3'} type="audio/mpeg" />
+                </audio>
             </div>
         )
     }
